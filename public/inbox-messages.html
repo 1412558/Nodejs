@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1">
+    <!-- đọc cấu hình thiết bị-->
+    <title>Inbox Messages</title>
+    <!-- thự viện font icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.select.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+  			 $('#myTable').DataTable();
+	});
+    </script>
+</head>
+
+<body>
+    <div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="header_right pull-right">
+					<ul class="parent">
+						<div>
+							<% if (user) { %>
+                        		<span>Hello! </span>
+                        		<strong><img src="<%= user.avatar %>" alt="avatar" style="width: 30px; height: 30px"><%= user.name %></strong>
+                        		<a href="/logout" style="color: #999"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
+                    		<% } %>
+
+                    		<% if (!user) { %>
+								<a href="/login" style="color: #999"><span class="glyphicon glyphicon-user"></span> Login </a> | 
+								<a href="/signup" style="color: #999"><span class="glyphicon glyphicon-pencil"></span> SignUp </a>
+                    		<% } %>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- end row -->
+		
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+						<span class="sr-only">Toggle navigation</span> 
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span> 
+						<span class="icon-bar"></span> 
+						</button>
+                    </div>
+					<!-- navbar collapse -->
+					<div class="collapse navbar-collapse" id="collapse">
+						<ul class="nav navbar-nav navbar-left"> <!-- navbar năm bên trái-->
+							<li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+							<li class="active"><a href="messages.html"><span class="glyphicon glyphicon-envelope"></span> Messages </a></li>
+							<li><a href="users.html"><span class="glyphicon glyphicon-user"></span> Users </a></li>
+							<li><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About </a></li>
+						</ul>
+					</div>
+                
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+						<li><a href="Messages.html">Messages</a></li>
+						<li class="active">Inbox Messages</li>
+                    </ol>
+                </nav>
+            </div>
+			<!-- end  col-md-12-->
+        </div>
+		<!-- end  row-->    
+		
+		<div class="row">
+            <div class="col-md-3">
+				<div class="navbar-collapse navbar-default" id="sidebar">
+					<ul class="nav nav-list">
+						<li><a href="inbox-messages.html"><i class="fa fa-envelope"></i> Inbox Messages </a></li>
+						<li><a href="new-messages.html"><i class="fa fa-send"></i> New Messages </a></li>
+						<li><a href="sent-messages.html"><i class="fa fa-archive"></i> Sent Messages </a></li>
+						<li><a href="friends.html"><i class="fa fa-users"></i> Friends </a></li>
+					</ul>
+				</div>
+            </div>
+            <!-- end col-md-3 -->
+
+
+            <!-- content 9col -->
+            <div class="col-md-9">
+                <h2 class="text-center" > Inbox Messages </h2>
+					
+					<div class="row" style="font-weight: bold;">
+						<a href="#"  style="color: Black;">
+							<div class="col-md-2">
+								From: Toàn Phạm
+							</div>
+							<div class="col-md-2">
+								Time: 21h30 12/05/2017
+							</div>
+							<div class="col-md-8">
+								Ngày mai được nghỉ học
+							</div>
+						</a>
+						
+					</div>
+					<hr>
+			</div> 
+            <!--end  10col-->
+        </div>
+		
+		
+		<!-- footer--> 
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-center">
+					<ul class="list-inline banner-social-buttons">
+					<li><a href="https://twitter.com"><i class="fa fa-twitter-square" style="color:blue; font-size:48px"></i></a></li>
+					<li><a href="https://plus.google.com"><i class="fa fa-google-plus-official" style="color:red; font-size:48px"></i> </a></li>
+					<li><a href="https://facebook.com/langtudatinh2060"><i class="fa fa-facebook-official" style="color:blue; font-size:48px"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<p class="copyright">2017 Powered By Blue Group, Theme By Bootstrap</p>
+			</div>	
+			<!-- end col-md-12 -->
+		</div>
+		<!-- end row -->
+
+    </div>
+    <!-- end container -->
+</body>
+</html>
